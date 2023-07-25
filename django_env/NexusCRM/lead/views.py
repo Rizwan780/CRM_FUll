@@ -94,7 +94,7 @@ class AddFileView(LoginRequiredMixin,View):
           file.lead_id = pk
           file.created_by = request.user
           file.save()
-
+        messages.success(request, 'The Lead File was Added.')
         return redirect('leads:detail', pk=pk)
     
 
@@ -110,8 +110,8 @@ class AddCommentView(LoginRequiredMixin,View):
             comment.created_by = request.user
             comment.lead_id = pk
             comment.save()
-
-
+ 
+        messages.success(request, 'The Lead was Created.')
         return redirect('leads:detail', pk=pk)
 
 class ConvertToClientView(LoginRequiredMixin,View):
@@ -145,7 +145,7 @@ class ConvertToClientView(LoginRequiredMixin,View):
 
            )
             
-       # show message and redirect  
+       #  show message and redirect  
 
        messages.success(request, 'The Lead was Converted to a Client.')
 

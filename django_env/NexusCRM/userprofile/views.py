@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 
 from .forms import SignupForm
 from .models import Userprofile
-
 from team.models import Team
 
 def signup(request):
